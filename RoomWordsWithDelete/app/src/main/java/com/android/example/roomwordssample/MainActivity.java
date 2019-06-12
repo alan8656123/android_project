@@ -179,12 +179,12 @@ public class MainActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
 
         if (requestCode == NEW_WORD_ACTIVITY_REQUEST_CODE && resultCode == RESULT_OK) {
-            Word word = new Word(data.getStringExtra(NewWordActivity.EXTRA_REPLY),data.getStringExtra(NewWordActivity.EXTRA_REPLY_QUE));
+            Word word = new Word(data.getStringExtra(NewWordActivity.EXTRA_REPLY),data.getStringExtra(NewWordActivity.EXTRA_REPLY_QUE),"ccsf");
             // Save the data
             mWordViewModel.insert(word);
         } else if (requestCode == UPDATE_WORD_ACTIVITY_REQUEST_CODE
                 && resultCode == RESULT_OK) {
-            Word word = new Word(data.getStringExtra(NewWordActivity.EXTRA_REPLY),data.getStringExtra(NewWordActivity.EXTRA_REPLY_QUE));
+            Word word = new Word(data.getStringExtra(NewWordActivity.EXTRA_REPLY),data.getStringExtra(NewWordActivity.EXTRA_REPLY_QUE),"cfdgsdfg");
 
 
            // Word word_delet = new Word(data.getStringExtra(NewWordActivity.EXTRA_REPLY),data.getStringExtra(NewWordActivity.EXTRA_REPLY_QUE));

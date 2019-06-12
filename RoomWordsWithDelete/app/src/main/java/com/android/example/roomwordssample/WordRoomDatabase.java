@@ -30,7 +30,7 @@ import android.support.annotation.NonNull;
  * with it happen through the WordViewModel.
  */
 
-@Database(entities = {Word.class}, version = 2, exportSchema = false)
+@Database(entities = {Word.class}, version = 3, exportSchema = false)
 public abstract class WordRoomDatabase extends RoomDatabase {
 
     public abstract WordDao wordDao();
@@ -76,7 +76,7 @@ public abstract class WordRoomDatabase extends RoomDatabase {
         private final WordDao mDao;
 
         // Initial data set
-        private static String [] words = {"Question 1", "Question 2"};
+      //  private static String [] words = {"Question 1", "Question 2"};
 
         PopulateDbAsync(WordRoomDatabase db) {
             mDao = db.wordDao();
@@ -85,12 +85,12 @@ public abstract class WordRoomDatabase extends RoomDatabase {
         @Override
         protected Void doInBackground(final Void... params) {
             // If we have no words, then create the initial list of words
-            if (mDao.getAnyWord().length < 1) {
+            /*if (mDao.getAnyWord().length < 1) {
                 for (int i = 0; i <= words.length - 1; i++) {
-                    Word word = new Word(words[i],"");
+                    Word word = new Word(words[i],"","");
                     mDao.insert(word);
                 }
-            }
+            }*/
             return null;
         }
     }

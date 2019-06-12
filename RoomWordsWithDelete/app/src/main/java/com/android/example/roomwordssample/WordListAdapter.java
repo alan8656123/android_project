@@ -57,6 +57,8 @@ public class WordListAdapter extends RecyclerView.Adapter<WordListAdapter.WordVi
             Word current = mWords.get(position);
             holder.wordItemView.setText(current.getWord());
             holder.queItemView.setText(current.getQuestion());
+            holder.likenumbers.setText(current.getLikenum());
+
             holder.numadd.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {

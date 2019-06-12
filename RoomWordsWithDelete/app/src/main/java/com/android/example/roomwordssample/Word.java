@@ -32,19 +32,24 @@ public class Word {
     @NonNull
     @ColumnInfo(name = "word")
     private String mWord;
-
     @ColumnInfo(name = "question")
     private String mQuestion;
+    @ColumnInfo(name = "likenum")
+    private String mLikenum;
 
-
-    public Word(@NonNull String word,@NonNull String question) {
+    public Word(@NonNull String word,@NonNull String question,@NonNull String likenum) {
         this.mWord = word;
         this.mQuestion=question;
+        this.mLikenum=likenum;
     }
 
     public String getWord(){return this.mWord;}
 
 
     public String getQuestion(){return this.mQuestion;}
+
+
+
+   public String getLikenum(){return this.mLikenum;}
 }
 
