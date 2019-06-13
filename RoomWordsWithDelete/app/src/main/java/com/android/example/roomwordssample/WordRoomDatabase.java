@@ -30,7 +30,7 @@ import android.support.annotation.NonNull;
  * with it happen through the WordViewModel.
  */
 
-@Database(entities = {Word.class}, version = 3, exportSchema = false)
+@Database(entities = {Word.class}, version = 4, exportSchema = false)
 public abstract class WordRoomDatabase extends RoomDatabase {
 
     public abstract WordDao wordDao();

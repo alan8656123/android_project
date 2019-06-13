@@ -27,6 +27,9 @@ import android.widget.EditText;
 import com.android.example.roomwordssample.R;
 
 import static com.android.example.roomwordssample.MainActivity.EXTRA_DATA_UPDATE_WORD;
+import static com.android.example.roomwordssample.MainActivity.EXTRA_DATA_UPDATE_WORD_QUE;
+import static com.android.example.roomwordssample.MainActivity.EXTRA_DATA_UPDATE_WORD_NUM;
+
 
 /**
  * This class displays a screen where the user enters a new word.
@@ -38,10 +41,14 @@ public class NewWordActivity extends AppCompatActivity {
 
     public static final String EXTRA_REPLY = "com.example.android.roomwordsample.REPLY";
     public static final String EXTRA_REPLY_QUE = "com.example.android.roomwordsample.REPLYQUE";
-
+    public static final String EXTRA_REPLY_NUM = "com.example.android.roomwordsample.REPLYNUM";
+    private int like_num_temp=0;
 
     public static final String EXTRA_REPLY_D = "com.example.android.roomwordsample.REPLY_D";
     public static final String EXTRA_REPLY_QUE_D = "com.example.android.roomwordsample.REPLYQUE_D";
+    public static final String EXTRA_REPLY_NUM_D = "com.example.android.roomwordsample.REPLYNUM_D";
+
+
 
     private EditText mEditWordView;
     private EditText mEditWordView_q;
@@ -60,9 +67,12 @@ public class NewWordActivity extends AppCompatActivity {
         // If we are passed content, fill it in for the user to edit.
         if (extras != null) {
             String word = extras.getString(EXTRA_DATA_UPDATE_WORD, "");
+            String word_q=extras.getString(EXTRA_DATA_UPDATE_WORD_QUE, "");
+            like_num_temp=extras.getInt(EXTRA_DATA_UPDATE_WORD_NUM,0);
             if (!word.isEmpty()) {
                 mEditWordView.setText(word);
-                mEditWordView.setSelection(word.length());
+                mEditWordView_q.setText(word_q);
+                mEditWordView_q.setSelection(word_q.length());
                 mEditWordView.requestFocus();
             }
         } // Otherwise, start with empty fields.
@@ -86,6 +96,7 @@ public class NewWordActivity extends AppCompatActivity {
                     // Put the new word in the extras for the reply Intent.
                     replyIntent.putExtra(EXTRA_REPLY, word);
                     replyIntent.putExtra(EXTRA_REPLY_QUE, word_q);
+                    replyIntent.putExtra(EXTRA_REPLY_NUM,like_num_temp);
                     // Set the result status to indicate success.
                     setResult(RESULT_OK, replyIntent);
                 }

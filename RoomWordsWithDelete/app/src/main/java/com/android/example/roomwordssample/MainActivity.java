@@ -52,7 +52,7 @@ import java.util.List;
  */
 public class MainActivity extends AppCompatActivity {
 
-    private WordViewModel mWordViewModel;
+    public static WordViewModel mWordViewModel;//////////////////////////////////////////////////////////////////////////////////////private to public static
 
     public static final int NEW_WORD_ACTIVITY_REQUEST_CODE = 1;
     public static final int UPDATE_WORD_ACTIVITY_REQUEST_CODE = 2;
@@ -61,6 +61,8 @@ public class MainActivity extends AppCompatActivity {
     private Word delet_word;
 
     public static final String EXTRA_DATA_UPDATE_WORD = "extra_word_to_be_updated";
+    public static final String EXTRA_DATA_UPDATE_WORD_QUE = "extra_word_to_be_updated_QUE";
+    public static final String EXTRA_DATA_UPDATE_WORD_NUM = "extra_word_to_be_updated_NUM";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -179,12 +181,12 @@ public class MainActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
 
         if (requestCode == NEW_WORD_ACTIVITY_REQUEST_CODE && resultCode == RESULT_OK) {
-            Word word = new Word(data.getStringExtra(NewWordActivity.EXTRA_REPLY),data.getStringExtra(NewWordActivity.EXTRA_REPLY_QUE),"0");
+            Word word = new Word(data.getStringExtra(NewWordActivity.EXTRA_REPLY),data.getStringExtra(NewWordActivity.EXTRA_REPLY_QUE),data.getIntExtra(NewWordActivity.EXTRA_REPLY_NUM,0));
             // Save the data
             mWordViewModel.insert(word);
         } else if (requestCode == UPDATE_WORD_ACTIVITY_REQUEST_CODE
                 && resultCode == RESULT_OK) {
-            Word word = new Word(data.getStringExtra(NewWordActivity.EXTRA_REPLY),data.getStringExtra(NewWordActivity.EXTRA_REPLY_QUE),"0");
+            Word word = new Word(data.getStringExtra(NewWordActivity.EXTRA_REPLY),data.getStringExtra(NewWordActivity.EXTRA_REPLY_QUE),data.getIntExtra(NewWordActivity.EXTRA_REPLY_NUM,0));
 
 
            // Word word_delet = new Word(data.getStringExtra(NewWordActivity.EXTRA_REPLY),data.getStringExtra(NewWordActivity.EXTRA_REPLY_QUE));
@@ -199,6 +201,8 @@ public class MainActivity extends AppCompatActivity {
     public void launchUpdateWordActivity( Word word) {
         Intent intent = new Intent(this, NewWordActivity.class);
         intent.putExtra(EXTRA_DATA_UPDATE_WORD, word.getWord());
+        intent.putExtra(EXTRA_DATA_UPDATE_WORD_QUE, word.getQuestion());
+        intent.putExtra(EXTRA_DATA_UPDATE_WORD_NUM, word.getLikenum());
         startActivityForResult(intent, UPDATE_WORD_ACTIVITY_REQUEST_CODE);
     }
 }
