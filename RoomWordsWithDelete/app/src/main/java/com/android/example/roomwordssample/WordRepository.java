@@ -68,6 +68,9 @@ public class WordRepository {
         new deleteWordAsyncTask(mWordDao).execute(word);
     }
 
+    public void updateWord(Word word) {
+        new updateWordAsyncTask(mWordDao).execute(word);
+    }
     // Static inner classes below here to run database interactions
     // in the background.
 
@@ -119,6 +122,19 @@ public class WordRepository {
         @Override
         protected Void doInBackground(final Word... params) {
             mAsyncTaskDao.deleteWord(params[0]);
+            return null;
+        }
+    }
+    private static class updateWordAsyncTask extends AsyncTask<Word, Void, Void> {
+        private WordDao mAsyncTaskDao;
+
+        updateWordAsyncTask(WordDao dao) {
+            mAsyncTaskDao = dao;
+        }
+
+        @Override
+        protected Void doInBackground(final Word... params) {
+            mAsyncTaskDao.updateWord(params[0]);
             return null;
         }
     }

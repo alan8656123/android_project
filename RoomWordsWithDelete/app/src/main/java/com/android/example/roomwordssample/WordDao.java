@@ -22,6 +22,7 @@ import android.arch.persistence.room.Delete;
 import android.arch.persistence.room.Insert;
 import android.arch.persistence.room.OnConflictStrategy;
 import android.arch.persistence.room.Query;
+import android.arch.persistence.room.Update;
 
 import com.android.example.roomwordssample.Word;
 
@@ -41,6 +42,9 @@ public interface WordDao {
 
     @Query("DELETE FROM word_table")
     void deleteAll();
+
+    @Update
+    void updateWord(Word word);
 
     @Delete
     void deleteWord(Word word);
