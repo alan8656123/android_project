@@ -19,11 +19,8 @@
       <change beforePath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.1/taskHistory/taskHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/example/roomwordssample/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/android/example/roomwordssample/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/example/roomwordssample/NewWordActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/android/example/roomwordssample/NewWordActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/example/roomwordssample/Word.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/android/example/roomwordssample/Word.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/example/roomwordssample/WordDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/android/example/roomwordssample/WordDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/example/roomwordssample/WordListAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/android/example/roomwordssample/WordListAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/android/example/roomwordssample/WordRoomDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/android/example/roomwordssample/WordRoomDatabase.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -58,17 +55,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/android/example/roomwordssample/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="114">
-              <caret line="54" column="93" selection-start-line="54" selection-start-column="93" selection-end-line="54" selection-end-column="93" />
+            <state relative-caret-position="-399">
+              <caret line="54" column="32" selection-start-line="54" selection-start-column="32" selection-end-line="54" selection-end-column="46" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/android/example/roomwordssample/NewWordActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="131">
-              <caret line="74" column="31" selection-start-line="74" selection-start-column="31" selection-end-line="74" selection-end-column="31" />
+            <state relative-caret-position="-950">
+              <caret line="41" column="31" selection-start-line="41" selection-start-column="31" selection-end-line="41" selection-end-column="31" />
               <folding>
                 <element signature="e#0#3812#0" expanded="true" />
                 <element signature="imports" expanded="true" />
@@ -80,8 +77,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/android/example/roomwordssample/Word.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="159">
-              <caret line="41" column="32" selection-start-line="41" selection-start-column="32" selection-end-line="41" selection-end-column="32" />
+            <state relative-caret-position="304">
+              <caret line="36" column="24" selection-start-line="36" selection-start-column="24" selection-end-line="36" selection-end-column="31" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -148,13 +145,14 @@
           <provider editor-type-id="android-manifest" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/android/example/roomwordssample/WordListAdapter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="74">
-              <caret line="61" column="73" selection-start-line="61" selection-start-column="73" selection-end-line="61" selection-end-column="73" />
+            <state relative-caret-position="223">
+              <caret line="71" column="15" lean-forward="true" selection-start-line="71" selection-start-column="15" selection-end-line="71" selection-end-column="15" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#2094#2339#0" expanded="true" />
                 <element signature="e#2338#2339#0" expanded="true" />
               </folding>
             </state>
@@ -164,8 +162,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/android/example/roomwordssample/WordDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="159">
-              <caret line="50" selection-start-line="50" selection-end-line="50" />
+            <state relative-caret-position="349">
+              <caret line="54" column="53" selection-start-line="54" selection-start-column="53" selection-end-line="54" selection-end-column="53" />
               <folding>
                 <element signature="e#0#1566#0" expanded="true" />
               </folding>
@@ -205,8 +203,8 @@
       <find>getLikenum</find>
       <find>Word</find>
       <find>WordViewModel</find>
-      <find>EXTRA_DATA_UPDATE_WORD</find>
       <find>mWordViewModel</find>
+      <find>EXTRA_DATA_UPDATE_WORD</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -223,14 +221,14 @@
         <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_new_word.xml" />
         <option value="$PROJECT_DIR$/build.gradle" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/android/example/roomwordssample/WordDao.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/android/example/roomwordssample/WordViewModel.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/android/example/roomwordssample/WordRepository.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/android/example/roomwordssample/Word.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/android/example/roomwordssample/WordRoomDatabase.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/android/example/roomwordssample/WordListAdapter.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/android/example/roomwordssample/MainActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/android/example/roomwordssample/NewWordActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/android/example/roomwordssample/MainActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/android/example/roomwordssample/WordDao.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/android/example/roomwordssample/WordListAdapter.java" />
       </list>
     </option>
   </component>
@@ -472,7 +470,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.23458445" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.23458445" />
       <window_info id="Structure" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Build Variants" order="4" side_tool="true" />
@@ -481,7 +479,7 @@
       <window_info id="Resources Explorer" order="7" />
       <window_info id="Capture Tool" order="8" />
       <window_info anchor="bottom" id="Run" order="0" weight="0.3286119" />
-      <window_info active="true" anchor="bottom" id="Logcat" order="1" visible="true" weight="0.32719547" />
+      <window_info anchor="bottom" id="Logcat" order="1" visible="true" weight="0.32719547" />
       <window_info anchor="bottom" id="TODO" order="2" weight="0.32719547" />
       <window_info anchor="bottom" id="Debug" order="3" />
       <window_info anchor="bottom" id="Terminal" order="4" weight="0.3286119" />
@@ -676,51 +674,52 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/android/example/roomwordssample/Word.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="159">
-          <caret line="41" column="32" selection-start-line="41" selection-start-column="32" selection-end-line="41" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/android/example/roomwordssample/WordDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="159">
-          <caret line="50" selection-start-line="50" selection-end-line="50" />
+        <state relative-caret-position="349">
+          <caret line="54" column="53" selection-start-line="54" selection-start-column="53" selection-end-line="54" selection-end-column="53" />
           <folding>
             <element signature="e#0#1566#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/android/example/roomwordssample/WordListAdapter.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/android/example/roomwordssample/Word.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="74">
-          <caret line="61" column="73" selection-start-line="61" selection-start-column="73" selection-end-line="61" selection-end-column="73" />
+        <state relative-caret-position="304">
+          <caret line="36" column="24" selection-start-line="36" selection-start-column="24" selection-end-line="36" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2338#2339#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/android/example/roomwordssample/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="54" column="93" selection-start-line="54" selection-start-column="93" selection-end-line="54" selection-end-column="93" />
+        <state relative-caret-position="-399">
+          <caret line="54" column="32" selection-start-line="54" selection-start-column="32" selection-end-line="54" selection-end-column="46" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/android/example/roomwordssample/NewWordActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="131">
-          <caret line="74" column="31" selection-start-line="74" selection-start-column="31" selection-end-line="74" selection-end-column="31" />
+        <state relative-caret-position="-950">
+          <caret line="41" column="31" selection-start-line="41" selection-start-column="31" selection-end-line="41" selection-end-column="31" />
           <folding>
             <element signature="e#0#3812#0" expanded="true" />
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/android/example/roomwordssample/WordListAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="223">
+          <caret line="71" column="15" lean-forward="true" selection-start-line="71" selection-start-column="15" selection-end-line="71" selection-end-column="15" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2094#2339#0" expanded="true" />
+            <element signature="e#2338#2339#0" expanded="true" />
           </folding>
         </state>
       </provider>

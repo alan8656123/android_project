@@ -52,7 +52,7 @@ public interface WordDao {
     @Query("SELECT * from word_table LIMIT 1")
     Word[] getAnyWord();
 
-    @Query("SELECT * from word_table ORDER BY word ASC")
+    @Query("SELECT * from word_table ORDER BY likenum ASC")
     LiveData<List<Word>> getAllWords();
 
 }

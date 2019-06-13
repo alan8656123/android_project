@@ -62,10 +62,10 @@ public class WordListAdapter extends RecyclerView.Adapter<WordListAdapter.WordVi
             holder.numadd.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    holder.like_nums++;
-                    holder.likenumbers.setText(""+holder.like_nums);
                     Word currenting = mWords.get(position);
-                    Word update_word=new Word(currenting.getWord(),currenting.getQuestion(),holder.like_nums);
+                    int temp=currenting.getLikenum();
+                    temp++;
+                    Word update_word=new Word(currenting.getWord(),currenting.getQuestion(),temp);
                     MainActivity.mWordViewModel.updateWore(update_word);
 
                 }
@@ -73,10 +73,11 @@ public class WordListAdapter extends RecyclerView.Adapter<WordListAdapter.WordVi
             holder.numsub.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    holder.like_nums--;
-                    holder.likenumbers.setText(""+holder.like_nums);
+
                     Word currenting = mWords.get(position);
-                    Word update_word=new Word(currenting.getWord(),currenting.getQuestion(),holder.like_nums);
+                    int temp=currenting.getLikenum();
+                    temp--;
+                    Word update_word=new Word(currenting.getWord(),currenting.getQuestion(),temp);
                     MainActivity.mWordViewModel.updateWore(update_word);
                 }
             });
