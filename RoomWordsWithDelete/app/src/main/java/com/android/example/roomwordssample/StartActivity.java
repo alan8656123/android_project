@@ -45,6 +45,7 @@ public class StartActivity extends AppCompatActivity {
     private EditText class_edittext;
     private Activity this_act;
     private Button start_btn;
+    private String nickname;
     Timer timer = new Timer(true);
 
 
@@ -99,6 +100,7 @@ public class StartActivity extends AppCompatActivity {
                 if(first_clicked) {
                     class_text.setAnimation(fadein);
                     class_edittext.setAnimation(fadein);
+                    class_edittext.setVisibility(View.VISIBLE);
                     start_btn.setAnimation(fadein);
                 }
 
@@ -119,6 +121,7 @@ public class StartActivity extends AppCompatActivity {
 
                         nickname_text.setAnimation(fadein);
                         nick_edittext.setAnimation(fadein);
+                        nick_edittext.setVisibility(View.VISIBLE);
                         class_text.setText(R.string.class_name);
                         break;
 

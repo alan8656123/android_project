@@ -6,22 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".StartActivity">
 
-    <Button
-        android:id="@+id/start_btn"
-        android:layout_width="164dp"
-        android:layout_height="77dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:background="@null"
-        android:onClick="start_main"
-        android:text="@string/enter_room"
-        android:textSize="30sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/class_editText" />
-
     <RadioGroup
         android:id="@+id/tea_std_group"
         android:layout_width="wrap_content"
@@ -70,17 +54,15 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:ems="10"
-        android:importantForAutofill="no"
-        android:inputType="number"
         app:layout_constraintStart_toEndOf="@+id/class_textview"
-        app:layout_constraintTop_toBottomOf="@+id/nickname_editText" />
+        app:layout_constraintTop_toBottomOf="@+id/nickname_editText"
+        android:importantForAutofill="no" />
 
     <ImageView
         android:id="@+id/teacher_img"
-        android:layout_width="262dp"
-        android:layout_height="335dp"
+        android:layout_width="297dp"
+        android:layout_height="351dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:contentDescription="@string/todo"
@@ -90,13 +72,14 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/start_btn"
+        app:layout_constraintVertical_bias="0.764"
         app:srcCompat="@drawable/teacher" />
 
     <ImageView
         android:id="@+id/student_img"
-        android:layout_width="275dp"
-        android:layout_height="329dp"
-        android:layout_marginStart="8dp"
+        android:layout_width="346dp"
+        android:layout_height="358dp"
+        android:layout_marginStart="48dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
@@ -107,6 +90,7 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/start_btn"
+        app:layout_constraintVertical_bias="0.542"
         app:srcCompat="@drawable/student" />
 
     <TextView
@@ -125,9 +109,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:autofillHints=""
         android:ems="10"
-        android:inputType="number"
         app:layout_constraintStart_toEndOf="@+id/nicktextView"
         app:layout_constraintTop_toBottomOf="@+id/tea_std_group" />
 
@@ -137,15 +119,14 @@
         android:layout_height="133dp"
         android:layout_gravity="center"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
+        android:contentDescription="TODO"
         android:scaleType="fitXY"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/anyquestion_image"
-        android:contentDescription="TODO" />
+        app:srcCompat="@drawable/anyquestion_image" />
 
     <ImageView
         android:id="@+id/que_imageview"
@@ -156,5 +137,20 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/question"
         android:contentDescription="TODO" />
+
+    <Button
+        android:id="@+id/start_btn"
+        android:layout_width="164dp"
+        android:layout_height="77dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="@null"
+        android:onClick="start_main"
+        android:text="@string/enter_room"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/class_editText" />
 
 </android.support.constraint.ConstraintLayout>
