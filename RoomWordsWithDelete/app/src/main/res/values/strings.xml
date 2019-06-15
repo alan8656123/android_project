@@ -29,5 +29,10 @@ limitations under the License. -->
     <string name="_0">0</string>
     <string name="question_textview">Question</string>
     <string name="sign_text_view">Sign</string>
+    <string name="enter_room">進入</string>
+    <string name="Teacher_str">我是老師</string>
+    <string name="Student_str">我是學生</string>
+    <string name="class_name">課堂名稱</string>
+    <string name="nick_name">暱稱</string>
 
 </resources>
