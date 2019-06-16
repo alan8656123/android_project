@@ -38,6 +38,7 @@ public class StartActivity extends AppCompatActivity {
     private int time=0;
     private boolean first_clicked=true;
     private ImageView title_image;
+    private ImageView question_mark_big;
     private ImageView que_image;
     private RadioButton R_teacher;
     private RadioButton R_student;
@@ -71,6 +72,7 @@ public class StartActivity extends AppCompatActivity {
         tea_or_std_group=findViewById(R.id.tea_std_group);
         tea_image=findViewById(R.id.teacher_img);
         std_image=findViewById(R.id.student_img);
+        question_mark_big=findViewById(R.id.question_mark_image);
         class_text=findViewById(R.id.class_textview);
         class_edittext=findViewById(R.id.class_editText);
         nickname_text=findViewById(R.id.nicktextView);
@@ -85,6 +87,11 @@ public class StartActivity extends AppCompatActivity {
         Animation boo2 =AnimationUtils.loadAnimation(this_act,R.anim.choose_anim);
         R_student.setAnimation(boo2);
         R_teacher.setAnimation(boo2);
+
+        question_mark_big.setVisibility(View.VISIBLE);
+        Animation que_image_start_ami=AnimationUtils.loadAnimation(this_act,R.anim.question_bigimage_rotate);
+        question_mark_big.setAnimation(que_image_start_ami);
+
 
         nickname_text.setVisibility(View.INVISIBLE);
         nick_edittext.setVisibility(View.INVISIBLE);
@@ -108,6 +115,7 @@ public class StartActivity extends AppCompatActivity {
                     class_edittext.setAnimation(fadein);
                     class_edittext.setVisibility(View.VISIBLE);
                     start_btn.setAnimation(fadein);
+                    question_mark_big.setAnimation(fadeout);
                 }
 
                 switch (checkedId){
@@ -134,7 +142,6 @@ public class StartActivity extends AppCompatActivity {
                         break;
 
                 }
-
                 if(first_clicked)first_clicked=false;
             }
         });
