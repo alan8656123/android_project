@@ -126,8 +126,8 @@ public class StartActivity extends AppCompatActivity {
 
                             nickname_text.setAnimation(fadeout);
                             nick_edittext.setAnimation(fadeout);
-                            class_text.setText("創建新課");
                         }
+                        class_text.setText("創建新課");
                         Permission=P_TEACHER;
                         break;
                     case R.id.radio_btn_student:

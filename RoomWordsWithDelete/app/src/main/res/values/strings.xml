@@ -47,5 +47,6 @@ limitations under the License. -->
     <string name="ok">ok</string>
     <string name="message_room">聊天室</string>
     <string name="leave">返回</string>
+    <string name="transfer">傳送</string>
 
 </resources>
