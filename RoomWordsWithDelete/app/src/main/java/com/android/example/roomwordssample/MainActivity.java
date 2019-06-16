@@ -41,6 +41,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -74,6 +75,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText messageField;
     private static TextView textArea ;
     private Button btnSend;
+    private ScrollView scrollView;
 
     public static AlertDialog.Builder builder ;
     public static boolean builder_is_show=false;
@@ -249,6 +251,7 @@ public class MainActivity extends AppCompatActivity {
        messageField=(EditText) textEntryView.findViewById(R.id.messageField);
         textArea=(TextView) textEntryView.findViewById(R.id.textArea);
         btnSend=(Button) textEntryView.findViewById(R.id.btnSend);
+        scrollView=(ScrollView) textEntryView.findViewById(R.id.Scroll);
 
         textArea.setText(MainActivity.total_message);
         btnSend.setOnClickListener(new View.OnClickListener() {
@@ -293,7 +296,7 @@ public class MainActivity extends AppCompatActivity {
         public void run() {
             do{
                 try {
-                    Thread.sleep(1000);
+                    Thread.sleep(200);
                     Message msg = new Message();
                     msg.what = msgKey1;
                     mHandler.sendMessage(msg);
@@ -311,6 +314,7 @@ public class MainActivity extends AppCompatActivity {
             switch (msg.what){
                 case msgKey1:
                     textArea.setText(MainActivity.total_message);
+                    scrollView.fullScroll(ScrollView.FOCUS_DOWN);
                     break;
                 default:
                     break;
