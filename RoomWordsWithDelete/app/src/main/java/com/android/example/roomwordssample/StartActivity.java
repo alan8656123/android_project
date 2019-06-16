@@ -51,7 +51,8 @@ public class StartActivity extends AppCompatActivity {
     private Activity this_act;
     private Button start_btn;
     private String nickname;
-    Timer timer = new Timer(true);
+    public static String classname="";
+    //Timer timer = new Timer(true);
 
 
 
@@ -61,7 +62,7 @@ public class StartActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start);
         this_act=this;
-        timer.schedule(new MyTimerTask(), 2000, 1000);
+        //timer.schedule(new MyTimerTask(), 2000, 1000);
 
         title_image=findViewById(R.id.title_image);
         que_image=findViewById(R.id.que_imageview);
@@ -148,13 +149,13 @@ public class StartActivity extends AppCompatActivity {
         }else if(Permission==P_STUDENT){
             name=nick_edittext.getText().toString();
         }
-
+        classname=class_edittext.getText().toString();
 
         Intent intent = new Intent(this, MainActivity.class);
         startActivityForResult(intent, START_ACTIVITY_REQUEST_CODE);
 
     }
-    public class MyTimerTask extends TimerTask
+    /*public class MyTimerTask extends TimerTask
     {
         public void run()
         {
@@ -167,6 +168,6 @@ public class StartActivity extends AppCompatActivity {
 
             }
         }
-    }
+    }*/
 
 }

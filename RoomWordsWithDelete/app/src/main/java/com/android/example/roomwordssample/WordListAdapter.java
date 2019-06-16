@@ -65,8 +65,11 @@ public class WordListAdapter extends RecyclerView.Adapter<WordListAdapter.WordVi
                     Word currenting = mWords.get(position);
                     int temp=currenting.getLikenum();
                     temp++;
-                    Word update_word=new Word(currenting.getWord(),currenting.getQuestion(),temp);
-                    MainActivity.mWordViewModel.updateWore(update_word);
+
+
+                    MainActivity.client.send("\\U"+currenting.getWord()+"\\Q"+currenting.getQuestion()+"\\N"+temp);
+                    //Word update_word=new Word(currenting.getWord(),currenting.getQuestion(),temp);
+                    //MainActivity.mWordViewModel.updateWore(update_word);
 
                 }
             });
@@ -77,8 +80,10 @@ public class WordListAdapter extends RecyclerView.Adapter<WordListAdapter.WordVi
                     Word currenting = mWords.get(position);
                     int temp=currenting.getLikenum();
                     temp--;
-                    Word update_word=new Word(currenting.getWord(),currenting.getQuestion(),temp);
-                    MainActivity.mWordViewModel.updateWore(update_word);
+
+                    MainActivity.client.send("\\U"+currenting.getWord()+"\\Q"+currenting.getQuestion()+"\\N"+temp);
+                    //Word update_word=new Word(currenting.getWord(),currenting.getQuestion(),temp);
+                    //MainActivity.mWordViewModel.updateWore(update_word);
                 }
             });
         } else {

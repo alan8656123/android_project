@@ -96,6 +96,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        setTitle(StartActivity.classname);
 
         builder= new AlertDialog.Builder(this);
         client=new Client(StartActivity.name,"192.168.50.37",8657);
@@ -214,17 +215,20 @@ public class MainActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
 
         if (requestCode == NEW_WORD_ACTIVITY_REQUEST_CODE && resultCode == RESULT_OK) {
-            Word word = new Word(data.getStringExtra(NewWordActivity.EXTRA_REPLY),data.getStringExtra(NewWordActivity.EXTRA_REPLY_QUE),data.getIntExtra(NewWordActivity.EXTRA_REPLY_NUM,0));
+            String New_que=data.getStringExtra(NewWordActivity.EXTRA_REPLY_QUE);
+            int new_num=data.getIntExtra(NewWordActivity.EXTRA_REPLY_NUM,0);
             // Save the data
-            mWordViewModel.insert(word);
+            //mWordViewModel.insert(word);
+            client.send("\\W"+StartActivity.name+"\\Q"+New_que+"\\N"+new_num);
         } else if (requestCode == UPDATE_WORD_ACTIVITY_REQUEST_CODE
                 && resultCode == RESULT_OK) {
-            Word word = new Word(data.getStringExtra(NewWordActivity.EXTRA_REPLY),data.getStringExtra(NewWordActivity.EXTRA_REPLY_QUE),data.getIntExtra(NewWordActivity.EXTRA_REPLY_NUM,0));
+
+            String New_que=data.getStringExtra(NewWordActivity.EXTRA_REPLY_QUE);
+            int new_num=data.getIntExtra(NewWordActivity.EXTRA_REPLY_NUM,0);
 
 
-           // Word word_delet = new Word(data.getStringExtra(NewWordActivity.EXTRA_REPLY),data.getStringExtra(NewWordActivity.EXTRA_REPLY_QUE));
-            mWordViewModel.updateWore(word);
-            //mWordViewModel.deleteWord(delet_word);
+            client.send("\\U"+StartActivity.name+"\\Q"+New_que+"\\N"+new_num);
+            //mWordViewModel.updateWore(word);
 
         }else {
             Toast.makeText(
@@ -258,7 +262,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(!messageField.getText().equals("")){
-                    MainActivity.client.send(messageField.getText().toString());
+                    client.send(messageField.getText().toString());
                     messageField.setText("");
 
                 }

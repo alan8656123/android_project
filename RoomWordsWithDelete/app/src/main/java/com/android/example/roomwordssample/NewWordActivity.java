@@ -50,7 +50,6 @@ public class NewWordActivity extends AppCompatActivity {
 
 
 
-    private EditText mEditWordView;
     private EditText mEditWordView_q;
 
     @Override
@@ -58,7 +57,6 @@ public class NewWordActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_word);
 
-        mEditWordView = findViewById(R.id.edit_word);
         mEditWordView_q = findViewById(R.id.edit_word_q);
 
 
@@ -70,10 +68,8 @@ public class NewWordActivity extends AppCompatActivity {
             String word_q=extras.getString(EXTRA_DATA_UPDATE_WORD_QUE, "");
             like_num_temp=extras.getInt(EXTRA_DATA_UPDATE_WORD_NUM,0);
             if (!word.isEmpty()) {
-                mEditWordView.setText(word);
                 mEditWordView_q.setText(word_q);
                 mEditWordView_q.setSelection(word_q.length());
-                mEditWordView.requestFocus();
             }
         } // Otherwise, start with empty fields.
 
@@ -85,21 +81,15 @@ public class NewWordActivity extends AppCompatActivity {
             public void onClick(View view) {
                 // Create a new Intent for the reply.
                 Intent replyIntent = new Intent();
-                if (TextUtils.isEmpty(mEditWordView.getText())) {
-                    // No word was entered, set the result accordingly.
-                    setResult(RESULT_CANCELED, replyIntent);
-                } else {
                     // Get the new word that the user entered.
 
-                    String word = mEditWordView.getText().toString();
                     String word_q = mEditWordView_q.getText().toString();
                     // Put the new word in the extras for the reply Intent.
-                    replyIntent.putExtra(EXTRA_REPLY, word);
                     replyIntent.putExtra(EXTRA_REPLY_QUE, word_q);
                     replyIntent.putExtra(EXTRA_REPLY_NUM,like_num_temp);
                     // Set the result status to indicate success.
                     setResult(RESULT_OK, replyIntent);
-                }
+
                 finish();
             }
         });

@@ -51,7 +51,7 @@ limitations under the License. -->
 
     <ImageButton
         android:id="@+id/imageButton"
-        android:layout_width="79dp"
+        android:layout_width="46dp"
         android:layout_height="49dp"
         android:onClick="open_dialog"
         app:layout_anchor="@+id/include2"
