@@ -36,7 +36,9 @@ limitations under the License. -->
 
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_main" />
+    <include
+        android:id="@+id/include2"
+        layout="@layout/content_main" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"
@@ -46,5 +48,14 @@ limitations under the License. -->
         android:layout_margin="@dimen/fab_margin"
         android:src="@drawable/ic_add_black_24dp"
         app:backgroundTint="@color/colorAccent" />
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="79dp"
+        android:layout_height="49dp"
+        android:onClick="open_dialog"
+        app:layout_anchor="@+id/include2"
+        app:layout_anchorGravity="right|center"
+        app:srcCompat="@drawable/ic_launcher_foreground" />
 
 </android.support.design.widget.CoordinatorLayout>

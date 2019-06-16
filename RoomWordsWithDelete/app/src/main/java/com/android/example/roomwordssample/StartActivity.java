@@ -29,6 +29,11 @@ import java.util.TimerTask;
 public class StartActivity extends AppCompatActivity {
     public static final int START_ACTIVITY_REQUEST_CODE = 100;
 
+    private static final int P_TEACHER = 1;
+    private static final int P_STUDENT = 2;
+
+    public static String name="";
+    public static int Permission=0;
 
     private int time=0;
     private boolean first_clicked=true;
@@ -114,6 +119,7 @@ public class StartActivity extends AppCompatActivity {
                             nick_edittext.setAnimation(fadeout);
                             class_text.setText("創建新課");
                         }
+                        Permission=P_TEACHER;
                         break;
                     case R.id.radio_btn_student:
                         if(!first_clicked)tea_image.setAnimation(fadeout);
@@ -123,6 +129,7 @@ public class StartActivity extends AppCompatActivity {
                         nick_edittext.setAnimation(fadein);
                         nick_edittext.setVisibility(View.VISIBLE);
                         class_text.setText(R.string.class_name);
+                        Permission=P_STUDENT;
                         break;
 
                 }
@@ -136,6 +143,13 @@ public class StartActivity extends AppCompatActivity {
     }
 
     public void start_main(View view){
+        if( Permission==P_TEACHER){
+            name="teacher";
+        }else if(Permission==P_STUDENT){
+            name=nick_edittext.getText().toString();
+        }
+
+
         Intent intent = new Intent(this, MainActivity.class);
         startActivityForResult(intent, START_ACTIVITY_REQUEST_CODE);
 

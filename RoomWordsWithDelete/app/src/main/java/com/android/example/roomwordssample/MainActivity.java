@@ -16,20 +16,32 @@
 
 package com.android.example.roomwordssample;
 
+import android.app.Dialog;
+import android.app.DialogFragment;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.support.v7.widget.helper.ItemTouchHelper;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.example.roomwordssample.NewWordActivity;
@@ -56,6 +68,20 @@ public class MainActivity extends AppCompatActivity {
 
     public static final int NEW_WORD_ACTIVITY_REQUEST_CODE = 1;
     public static final int UPDATE_WORD_ACTIVITY_REQUEST_CODE = 2;
+    private static final int msgKey1 = 1;
+
+
+    private EditText messageField;
+    private static TextView textArea ;
+    private Button btnSend;
+
+    public static AlertDialog.Builder builder ;
+    public static boolean builder_is_show=false;
+
+
+    public static String total_message="";
+
+    public static Client client;
 
 
     private Word delet_word;
@@ -68,6 +94,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        builder= new AlertDialog.Builder(this);
+        client=new Client(StartActivity.name,"192.168.50.37",8657);
+
+
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -205,4 +236,85 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtra(EXTRA_DATA_UPDATE_WORD_NUM, word.getLikenum());
         startActivityForResult(intent, UPDATE_WORD_ACTIVITY_REQUEST_CODE);
     }
+
+    public void open_dialog(View view){
+        /*MessageDialog mes=new MessageDialog();
+        mes.show(getSupportFragmentManager(),"");*/
+
+        // Get the layout inflater
+        LayoutInflater inflater = this.getLayoutInflater();
+        final View textEntryView = inflater.inflate(R.layout.message_layout, null);
+        builder.setView(textEntryView);
+
+       messageField=(EditText) textEntryView.findViewById(R.id.messageField);
+        textArea=(TextView) textEntryView.findViewById(R.id.textArea);
+        btnSend=(Button) textEntryView.findViewById(R.id.btnSend);
+
+        textArea.setText(MainActivity.total_message);
+        btnSend.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(!messageField.getText().equals("")){
+                    MainActivity.client.send(messageField.getText().toString());
+                    messageField.setText("");
+
+                }
+
+            }
+        });
+
+        builder.setMessage(R.string.message_room)
+                /*.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        // User cancelled the dialog
+                    }
+                })*/
+                .setPositiveButton(R.string.leave, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+
+                    }
+                });
+        // Create the AlertDialog object and return it
+        builder.create();
+        builder.show();
+        builder_is_show=true;
+
+        Thread t = new Thread(runnable);
+        t.start();
+    }
+
+    public static void printToconsole(String message) {
+        MainActivity.total_message+=message+"\n";
+        //textArea.setText(MainActivity.total_message);
+    }
+
+    private Runnable runnable = new Runnable() {
+        @Override
+        public void run() {
+            do{
+                try {
+                    Thread.sleep(1000);
+                    Message msg = new Message();
+                    msg.what = msgKey1;
+                    mHandler.sendMessage(msg);
+
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }while (true);
+        }
+    };
+    private Handler mHandler = new Handler(){
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            switch (msg.what){
+                case msgKey1:
+                    textArea.setText(MainActivity.total_message);
+                    break;
+                default:
+                    break;
+            }
+        }
+    };
 }
