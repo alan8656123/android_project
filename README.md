@@ -5,4 +5,4 @@ javachat是在電腦上跑的server，
 
 
 ## Demo vedio
-[![Watch the video](coverphoto.png)](demo.mp4)
+[![Watch the video](coverphoto.png)](https://www.youtube.com/watch?v=oxd3-sxnotg&feature=youtu.be)
