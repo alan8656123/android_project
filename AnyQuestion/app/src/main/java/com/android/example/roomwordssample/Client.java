@@ -72,27 +72,18 @@ public class Client {
                         if(message.startsWith("\\W")) {
                             String temp_S=message.substring(message.indexOf("W"));
                             String name=temp_S.substring(1,temp_S.indexOf("\\Q"));
-
                             temp_S=temp_S.substring(temp_S.indexOf("Q"));
                             String que=temp_S.substring(1,temp_S.indexOf("\\N"));
-
-
                             Word word=new Word(name,que,0);
                             MainActivity.mWordViewModel.insert(word);
-
                         }if(message.startsWith("\\U")) {
                             String temp_S=message.substring(message.indexOf("U"));
                             String name=temp_S.substring(1,temp_S.indexOf("\\Q"));
-
                             temp_S=temp_S.substring(temp_S.indexOf("Q"));
                             String que=temp_S.substring(1,temp_S.indexOf("\\N"));
-
-
                             temp_S=temp_S.substring(temp_S.indexOf("N"));
-
                             temp_S=temp_S.substring(1,temp_S.indexOf("\\e"));
                             int num=Integer.parseInt(temp_S);
-
                             Word word=new Word(name,que,num);
                             MainActivity.mWordViewModel.updateWore(word);
 
